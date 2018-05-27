@@ -1,0 +1,33 @@
+body, html {
+  height: 100%;
+  margin: 0;
+}
+
+body {
+  text-align: center;
+}
+
+.site-wrapper {
+	width: 100%;
+  min-height: 100%;
+  background-color: antiquewhite;
+  }
+
+.container {
+  background-color: lightslategrey;
+  min-width: 100%;
+  height: 2.5em;
+  margin-bottom: 20%;
+}
+
+.title {
+  position: relative;
+  line-height: 2em;
+  color: black;
+  font-size: 1.2em;
+  font-family: 'Ubuntu', serif;
+}
+
+.riding-list {
+  min-width: 40%;
+}
