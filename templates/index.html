@@ -22,13 +22,36 @@
 				<h class="title">Find Your Minister</h>
 			</div>
 			<div class="site-wrapper-inner">
-				<select class="riding-list">
-					<option>text1</option>
-					<option>text2</option>
-					<option>text3</option>
-					<option>text4</option>
-					<option>text5</option>
-				</select>
+				<!-- <form class="form-inline">
+					<div class="form-group">
+						<select class="riding-list">
+							<option>Select your Riding</option>
+							{% for riding in ridings %}
+							<option value="{{ riding }}">{{ riding }}</option>
+							{% endfor %}
+						</select>
+						</br>
+						<button type="submit" class="btn btn-primary btn-sm">Find your Minister</button>
+					</div>
+				</form> -->
+				<form class="form-inline" method="POST"  > 
+					<div class="form-group">
+						<div class="input-group">
+								<select class="riding-list" name="chose" required> <!--{% if chosen=="{{riding}}" %} selected {% endif %} -->
+									<option disabled selected>Select your Riding</option>
+									{% for riding in ridings %}
+									<option value="{{ riding }}" 
+									{% if chosen == riding %} 
+										selected 
+									{% endif %}}>
+									{{ riding }}</option>
+									{% endfor %}
+								</select>
+							</br>
+							<button type="submit" class="btn btn-primary btn-sm">Find your Minister</button>
+						</div>
+					</div>
+				</form>
 			</div>
 		</div>
 
