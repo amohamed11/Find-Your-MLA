@@ -19,36 +19,44 @@
     <body>
 		<div class="site-wrapper"> 
 			<div class="container">
-				<h class="title">Find Your Minister</h>
+				<h class="title">Find Your MLA</h>
 			</div>
 			<div class="site-wrapper-inner">
-				<!-- <form class="form-inline">
-					<div class="form-group">
-						<select class="riding-list">
-							<option>Select your Riding</option>
-							{% for riding in ridings %}
-							<option value="{{ riding }}">{{ riding }}</option>
-							{% endfor %}
-						</select>
-						</br>
-						<button type="submit" class="btn btn-primary btn-sm">Find your Minister</button>
+				<form method="POST"  > 
+					{% if info !='' %}
+					<div class="media">
+						<div class="media-body">
+							{% if info.image_url !='None' %}
+							<img src="{{ info.image_url }}" class="media-object" style="width:140px">
+							{% endif %}
+							<h1 style="font-size: 1.4em;" >{{ info.name }}</h1>
+							<table class="info"> 
+								<tr>
+									<td >Party: {{ info.party }}</td>
+									<td >Phone No: {{ info.phone}}</td>
+								</tr>
+								<tr>
+									<td >District: {{ info.district }}</td>
+									<td>Email: <a href="malito:{{ info.email }}">{{ info.email }}</a></td>
+								</tr>
+							</table> 
+						</div>
 					</div>
-				</form> -->
-				<form class="form-inline" method="POST"  > 
+					{% endif %}
 					<div class="form-group">
 						<div class="input-group">
-								<select class="riding-list" name="chose" required> <!--{% if chosen=="{{riding}}" %} selected {% endif %} -->
-									<option disabled selected>Select your Riding</option>
-									{% for riding in ridings %}
-									<option value="{{ riding }}" 
-									{% if chosen == riding %} 
-										selected 
-									{% endif %}}>
-									{{ riding }}</option>
+								<select class="district-list" name="chose" required> 
+									<option disabled selected>Select your District</option>
+									{% for district in districts %}
+									<option value="{{ district }}" 
+									{% if chosen == district %} 
+									selected 
+									{% endif %}>
+									{{ district }}</option>
 									{% endfor %}
 								</select>
 							</br>
-							<button type="submit" class="btn btn-primary btn-sm">Find your Minister</button>
+							<button type="submit" class="btn btn-primary btn-sm">Find</button>
 						</div>
 					</div>
 				</form>
