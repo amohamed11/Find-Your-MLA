@@ -1,6 +1,6 @@
 # Find-Your-MLA
 
-A simple Flask web app, that uses a database to find the Member of Legislative Assembly(MLA).
+A simple Flask web app, that queries a database that was generated from scraping http://www.assembly.ab.ca Index of members, to find the Member of Legislative Assembly(MLA) for any selected riding in Alberta.
 
 This program uses the following modules:
 ```
